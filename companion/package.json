@@ -7,12 +7,12 @@
   "license": "MIT",
   "homepage": "https://github.com/cursor-mobile/cursor-mobile",
   "scripts": {
-    "build": "tsc && mkdir -p dist/renderer && cp renderer/index.html dist/renderer/index.html",
+    "build": "tsc && node scripts/copy-renderer.js",
     "start": "npm run build && electron .",
-    "dist": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
-    "dist:mac": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg --publish never",
-    "dist:linux": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --linux AppImage --publish never",
-    "dist:win": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win nsis --publish never"
+    "dist": "npm run build && electron-builder",
+    "dist:mac": "npm run build && electron-builder --mac dmg --publish never",
+    "dist:linux": "npm run build && electron-builder --linux AppImage --publish never",
+    "dist:win": "npm run build && electron-builder --win nsis --publish never"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.27",
