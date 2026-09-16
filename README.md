@@ -50,7 +50,7 @@ An unsigned `.ipa` cannot be installed on a stock iPhone until you sign it with 
 cd companion && npm run dist:mac
 ```
 
-Linux AppImage and Windows exe are produced by the Release workflow (and AppImage can be built in Docker).
+Linux AppImage and Windows exe are produced by the Release workflow. The Linux image recipe is [`scripts/linux.Dockerfile`](scripts/linux.Dockerfile) if you have Docker.
 
 ## Permission prompts
 
