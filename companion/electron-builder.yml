@@ -1,0 +1,33 @@
+appId: com.cursormobile.companion
+productName: Cursor Mobile Companion
+copyright: MIT
+directories:
+  output: release
+files:
+  - dist/**/*
+  - package.json
+asar: true
+asarUnpack:
+  - node_modules/@cursor/sdk*/**
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - dmg
+  identity: null
+  gatekeeperAssess: false
+  hardenedRuntime: false
+dmg:
+  artifactName: CursorMobileCompanion-${version}-mac.${ext}
+linux:
+  target:
+    - AppImage
+  category: Development
+  artifactName: CursorMobileCompanion-${version}-linux.${ext}
+win:
+  target:
+    - nsis
+  artifactName: CursorMobileCompanion-${version}-win.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+publish: null
